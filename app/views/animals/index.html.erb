@@ -1,0 +1,22 @@
+<% if  params[:type] %>
+	<h1> showing all <%= params[:type].pluralize %> </h1>
+<% else %>
+	<h1>Showing all Animals </h1>
+<% end %>
+
+
+<ul>
+<% @animals.each do |animal| %>
+	<li>
+		<%= animal.name %>
+		<%= animal.race %>
+		<%= animal.age %>
+
+		<%= link_to 'Show', sti_animal_path(@zoo, animal.race, animal) %>
+		<%= link_to 'Edit', sti_animal_path(@zoo, animal.race, animal, 'edit') %>
+		<%= link_to 'Delete', sti_animal_path(@zoo, animal.race, animal), method: :delete %>
+	</li>
+<% end %>
+</ul>
+
+<%= link_to 'Back', zoo_path(@zoo) %>

@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @zoo.name %>
+</p>
+
+<p>
+	<strong>Animals:</strong>
+	<div>
+		Number of Lions: <%= @zoo.lions.count %>
+		<%= link_to 'All Lions', sti_animal_path(@zoo, 'Lion') %>
+	</div>
+
+	<div>
+		Number of Elephants: <%= @zoo.elephants.count %>
+		<%= link_to 'All Elephants', sti_animal_path(@zoo, 'Elephant') %>
+	</div>
+
+	<div>
+		Number of Bears: <%= @zoo.bears.count %>
+		<%= link_to 'All Bears', sti_animal_path(@zoo, 'Bear') %>
+	</div>
+
+	<div>
+		Number of Apes: <%= @zoo.apes.count %>
+		<%= link_to 'All Apes', sti_animal_path(@zoo, 'Ape') %>
+	</div>
+
+	<div>
+		Number of Cats: <%= @zoo.cats.count %>
+		<%= link_to 'All Cats', sti_animal_path(@zoo, 'Cat') %>
+	</div>
+
+	<div>
+		Total Number of Animals: <%= @zoo.animals.count %>
+		<%= link_to 'All Animals', sti_animal_path(@zoo) %>
+	</div>
+</p>
+
+<%= link_to 'New Animal', new_zoo_animal_path(@zoo) %>
+<%= link_to 'Edit', edit_zoo_path(@zoo) %> |
+<%= link_to 'Back', zoos_path %>

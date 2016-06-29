@@ -1,0 +1,18 @@
+<%= form_for [@zoo, @animal] do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+
+	<% if @animal.race %>
+		<%= f.label :race %>
+		<p><%= @animal.race %></p>
+	<% else %>
+		<%= f.label :race %>
+		<%= f.select :race, Animal.races %>
+	<% end %>
+
+	<%= f.label :age %>
+	<%= f.number_field :age %>
+
+	<%= f.submit %>
+<% end %>
+<%= link_to sti_animal_path(@zoo) %>

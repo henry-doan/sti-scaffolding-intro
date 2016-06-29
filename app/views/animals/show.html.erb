@@ -1,0 +1,12 @@
+<h1>I am : <%= @animal.name %></h1>
+<br />
+
+<p>Age: <%= @animal.age %></p>
+<p>Race: <%= @animal.race %></p>
+
+<strong>Hear me: <%= @animal.talk %></strong>
+
+<div>
+<%= link_to 'Edit', sti_animal_path(@zoo, @animal.race, @animal, 'edit') %>
+<%= link_to 'Back', sti_animal_path(@zoo) %>
+</div>
